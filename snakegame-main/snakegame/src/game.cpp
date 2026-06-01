@@ -583,6 +583,8 @@ void Game::run() {
 
             update_timers();
 
+            update_state();
+            if (!is_running) break; // 충돌로 종료
         
             update_contents_val();
             if (check_mission()) {
@@ -594,9 +596,6 @@ void Game::run() {
                     return;
                 }
             }
-
-            update_state();
-            if (!is_running) break; // 충돌로 종료
 
 
             update_screen();
